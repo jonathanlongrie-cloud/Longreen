@@ -721,6 +721,7 @@
     .nav-cta{margin-top:0;white-space:nowrap;}
     .sidebar-footer{display:none;}
     .sidebar-recent{display:none;}
+    .sidebar-bottom{border:none;margin:0;padding:0;}
     .main{padding:22px 18px 50px 18px;}
     .job-row{grid-template-columns:1fr 1fr;row-gap:4px;position:relative;padding-right:38px;}
     .job-row .job-cell:nth-child(3),
@@ -757,6 +758,184 @@
     box-shadow:0 10px 30px rgba(0,0,0,.4);
   }
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+  /* ---------- SIDEBAR BOTTOM ---------- */
+  .sidebar-bottom{
+    margin-top:10px;
+    padding-top:10px;
+    border-top:1px solid var(--line-soft);
+  }
+
+  /* ---------- FILTER TABS ---------- */
+  .filter-tabs{
+    display:flex;gap:6px;margin-bottom:18px;flex-wrap:wrap;
+  }
+  .filter-tab{
+    padding:7px 14px;
+    border-radius:999px;
+    border:1px solid var(--line);
+    background:var(--bg-1);
+    color:var(--text-1);
+    font-size:12.5px;
+    font-weight:500;
+    cursor:pointer;
+  }
+  .filter-tab.active{
+    background:var(--green-500);
+    border-color:var(--green-500);
+    color:#08130D;
+    font-weight:600;
+  }
+  .search-input-wrap{margin-bottom:20px;max-width:360px;}
+  .search-input-wrap input{
+    width:100%;
+    background:var(--bg-1);
+    border:1px solid var(--line);
+    color:var(--text-0);
+    border-radius:var(--radius-md);
+    padding:10px 14px;
+    font-size:13.5px;
+    outline:none;
+  }
+  .search-input-wrap input:focus{border-color:var(--green-400);}
+
+  /* ---------- STATUS BADGES ---------- */
+  .badge.scheduled{background:rgba(109,219,150,.14);color:var(--green-300);}
+  .badge.completed{background:rgba(227,166,63,.14);color:var(--amber);}
+  .badge.cancelled{background:rgba(226,105,92,.14);color:var(--red);}
+  .status-badge-row{display:flex;gap:8px;margin-bottom:22px;flex-wrap:wrap;}
+  .jobs-row{grid-template-columns:1.2fr 1.2fr .8fr .7fr .8fr .8fr .8fr 32px !important;}
+
+  /* ---------- CUSTOMERS LIST ---------- */
+  .customer-card-row{
+    display:grid;
+    grid-template-columns:1.6fr 1.3fr .9fr .9fr .9fr .9fr;
+    gap:10px;
+    padding:16px 18px;
+    align-items:center;
+    border-bottom:1px solid var(--line-soft);
+    cursor:pointer;
+    transition:background .12s ease;
+  }
+  .customer-card-row:last-child{border-bottom:none;}
+  .customer-card-row:hover{background:var(--bg-2);}
+  .customer-card-row.head{cursor:default;color:var(--text-2);font-size:11px;font-weight:600;letter-spacing:.02em;padding:12px 18px;}
+  .customer-card-row.head:hover{background:transparent;}
+  .customer-name-cell{font-size:14px;font-weight:600;color:var(--text-0);}
+  .customer-sub-cell{font-size:12px;color:var(--text-2);margin-top:2px;}
+  .cc-stat{font-size:13px;color:var(--text-1);}
+  .cc-stat.accent{color:var(--green-300);font-weight:600;}
+  .cc-stat.warn{color:var(--amber);font-weight:600;}
+
+  /* ---------- CUSTOMER PROFILE ---------- */
+  .profile-layout{display:grid;grid-template-columns:1.1fr 1.6fr;gap:22px;align-items:start;}
+  .profile-card{
+    background:var(--bg-1);border:1px solid var(--line);border-radius:var(--radius-lg);
+    padding:22px;
+  }
+  .profile-name{font-family:var(--font-display);font-size:21px;font-weight:600;margin:0 0 4px 0;}
+  .profile-address{font-size:13px;color:var(--text-2);margin:0 0 14px 0;}
+  .profile-contact-row{display:flex;justify-content:space-between;font-size:13px;padding:8px 0;border-bottom:1px solid var(--line-soft);}
+  .profile-contact-row:last-child{border-bottom:none;}
+  .profile-contact-row span.k{color:var(--text-2);}
+  .profile-contact-row span.v{color:var(--text-0);font-weight:500;}
+  .profile-stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:16px 0;}
+  .profile-stat{background:var(--bg-0);border:1px solid var(--line-soft);border-radius:var(--radius-md);padding:12px 14px;}
+  .profile-stat-label{font-size:10.5px;color:var(--text-2);margin-bottom:4px;}
+  .profile-stat-value{font-family:var(--font-display);font-size:17px;font-weight:600;color:var(--text-0);}
+  .profile-stat-value.accent{color:var(--green-300);}
+  .profile-stat-value.warn{color:var(--amber);}
+  .notes-box{
+    background:var(--bg-0);border:1px solid var(--line);border-radius:var(--radius-md);
+    padding:10px 12px;font-size:13px;color:var(--text-1);width:100%;min-height:70px;
+    resize:vertical;outline:none;font-family:inherit;
+  }
+  .notes-box:focus{border-color:var(--green-400);}
+  .recurring-card{
+    background:var(--bg-0);border:1px solid var(--line-soft);border-radius:var(--radius-md);
+    padding:14px 16px;margin-top:6px;
+  }
+  .recurring-summary-title{font-size:13.5px;font-weight:600;color:var(--text-0);margin-bottom:4px;}
+  .recurring-summary-detail{font-size:12px;color:var(--text-2);line-height:1.6;}
+  .history-table{background:var(--bg-1);border:1px solid var(--line);border-radius:var(--radius-lg);overflow:hidden;}
+  .history-row{
+    display:grid;grid-template-columns:1fr 2fr .7fr .8fr;gap:10px;
+    padding:13px 18px;align-items:center;border-bottom:1px solid var(--line-soft);
+    cursor:pointer;transition:background .12s ease;
+  }
+  .history-row:last-child{border-bottom:none;}
+  .history-row:hover{background:var(--bg-2);}
+  .history-row.head{cursor:default;color:var(--text-2);font-size:11px;font-weight:600;padding:11px 18px;}
+  .history-row.head:hover{background:transparent;}
+
+  /* ---------- SCHEDULE / CALENDAR ---------- */
+  .cal-toolbar{display:flex;align-items:center;gap:12px;margin-bottom:18px;}
+  .cal-month-label{font-family:var(--font-display);font-size:17px;font-weight:600;min-width:170px;}
+  .cal-grid{
+    display:grid;
+    grid-template-columns:repeat(7,1fr);
+    gap:1px;
+    background:var(--line);
+    border:1px solid var(--line);
+    border-radius:var(--radius-lg);
+    overflow:hidden;
+  }
+  .cal-dow{
+    background:var(--bg-1);
+    padding:8px 10px;
+    font-size:10.5px;
+    font-weight:600;
+    letter-spacing:.04em;
+    color:var(--text-2);
+    text-align:center;
+  }
+  .cal-cell{
+    background:var(--bg-0);
+    min-height:104px;
+    padding:8px;
+    display:flex;flex-direction:column;gap:4px;
+  }
+  .cal-cell.other-month{background:var(--bg-1);opacity:.4;}
+  .cal-cell.today{background:rgba(67,191,116,.06);}
+  .cal-date-num{font-size:12px;color:var(--text-2);font-weight:600;}
+  .cal-cell.today .cal-date-num{color:var(--green-300);}
+  .cal-job-chip{
+    font-size:10.5px;
+    padding:3px 6px;
+    border-radius:5px;
+    background:var(--bg-2);
+    border-left:2.5px solid var(--green-400);
+    color:var(--text-0);
+    cursor:pointer;
+    overflow:hidden;text-overflow:ellipsis;white-space:nowrap;
+  }
+  .cal-job-chip:hover{background:var(--bg-3);}
+  .cal-job-chip.completed{border-left-color:var(--amber);}
+  .cal-job-chip.paid{border-left-color:var(--green-300);opacity:.75;}
+  .cal-job-chip.cancelled{border-left-color:var(--red);opacity:.5;text-decoration:line-through;}
+  .cal-more{font-size:10px;color:var(--text-2);padding:2px 6px;}
+
+  @media (max-width:980px){
+    .profile-layout{grid-template-columns:1fr;}
+  }
+  @media (max-width:760px){
+    .cal-cell{min-height:64px;font-size:11px;}
+    .customer-card-row{grid-template-columns:1fr 1fr;row-gap:4px;}
+    .customer-card-row .cc-stat:nth-of-type(n+3){display:none;}
+    .customer-card-row.head{display:none;}
+    .history-row{grid-template-columns:1fr 1fr;row-gap:2px;}
+  }
+
+  /* ---------- JOB DETAIL ---------- */
+  .job-detail-layout{display:grid;grid-template-columns:1.3fr 1fr;gap:22px;align-items:start;}
+  .job-detail-actions{display:flex;flex-direction:column;gap:10px;}
+  .job-detail-actions .btn{width:100%;justify-content:center;}
+  .payment-form{
+    background:var(--bg-0);border:1px solid var(--line-soft);border-radius:var(--radius-md);
+    padding:14px;margin-top:10px;display:none;gap:10px;flex-direction:column;
+  }
+  .payment-form.open{display:flex;}
+  @media (max-width:980px){ .job-detail-layout{grid-template-columns:1fr;} }
 </style>
 </head>
 <body>
@@ -777,19 +956,38 @@
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="7" height="9" rx="1.5"/><rect x="14" y="3" width="7" height="5" rx="1.5"/><rect x="14" y="12" width="7" height="9" rx="1.5"/><rect x="3" y="16" width="7" height="5" rx="1.5"/></svg>
         Dashboard
       </button>
-      <button class="nav-item" data-nav="settings">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.9 7.9 0 0 0-1.7-1L15 3h-4l-.3 2.4a7.9 7.9 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.7 7.7 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.9 7.9 0 0 0 1.7 1L11 21h4l.3-2.4a7.9 7.9 0 0 0 1.7-1l2.4 1 2-3.4-2-1.6Z"/></svg>
-        Settings
+      <button class="nav-item" data-nav="customers">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="9" cy="8" r="3.2"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="8.5" r="2.4"/><path d="M15.5 14.2c2.6.4 4.5 2.6 4.5 5.3"/></svg>
+        Customers
+      </button>
+      <button class="nav-item" data-nav="schedule">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></svg>
+        Schedule
+      </button>
+      <button class="nav-item" data-nav="quotes">
+        <svg viewBox="0 0 24 24" width="17" height="17" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 5v14M5 12h14"/></svg>
+        Quotes
+      </button>
+      <button class="nav-item" data-nav="jobs">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="4" y="4" width="16" height="17" rx="2"/><path d="M8 2.5h8M8 9h8M8 13h8M8 17h5"/></svg>
+        Jobs
+      </button>
+      <button class="nav-item" data-nav="invoices">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 3h9l4 4v14H6z"/><path d="M15 3v4h4M9 12h6M9 16h6"/></svg>
+        Invoices
       </button>
     </div>
-    <button class="nav-cta" id="new-quote-btn">
-      <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M12 5v14M5 12h14"/></svg>
-      New Quote
-    </button>
 
     <div class="sidebar-recent">
       <div class="sidebar-recent-label">Recent Invoices</div>
       <div id="sidebar-recent-list"></div>
+    </div>
+
+    <div class="sidebar-bottom">
+      <button class="nav-item" data-nav="settings">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="12" cy="12" r="3.2"/><path d="M19.4 13a7.7 7.7 0 0 0 0-2l2-1.6-2-3.4-2.4 1a7.9 7.9 0 0 0-1.7-1L15 3h-4l-.3 2.4a7.9 7.9 0 0 0-1.7 1l-2.4-1-2 3.4L6.6 11a7.7 7.7 0 0 0 0 2l-2 1.6 2 3.4 2.4-1a7.9 7.9 0 0 0 1.7 1L11 21h4l.3-2.4a7.9 7.9 0 0 0 1.7-1l2.4 1 2-3.4-2-1.6Z"/></svg>
+        Settings
+      </button>
     </div>
 
     <div class="sidebar-footer">
@@ -843,6 +1041,11 @@ const LABELS = {
 };
 
 const DESC_WEEDEATING = { light:"Light Weedeating", normal:"Weedeating", heavy:"Heavy Weedeating" };
+
+const FREQUENCY_LABELS = { onetime:"One time", weekly:"Weekly", biweekly:"Every 2 weeks", triweekly:"Every 3 weeks", monthly:"Monthly" };
+const FREQUENCY_DAYS = { weekly:7, biweekly:14, triweekly:21 };
+const DOW_LABELS = ["Sun","Mon","Tue","Wed","Thu","Fri","Sat"];
+const MONTH_LABELS = ["January","February","March","April","May","June","July","August","September","October","November","December"];
 
 const WIZARD_STEPS = [
   { key:"size", question:"What size is the lawn?", options:[
@@ -933,7 +1136,14 @@ const State = {
   manualPrice:null,
   activeJob:null,       // job being viewed/created
   editingCustomerId:null,
-  invoiceDraft:null
+  invoiceDraft:null,
+  activeCustomerId:null,
+  jobDetailReturn:"jobs",
+  customerSearch:"",
+  jobsFilter:"all",
+  scheduleMonth:null,   // {y, m} — set on first schedule render
+  recurringFormOpen:false,
+  showAddCustomerForm:false
 };
 
 /* =========================================================
@@ -973,6 +1183,23 @@ function formatDuration(mins){
 ========================================================= */
 function uid(prefix){ return prefix + "_" + Date.now().toString(36) + Math.random().toString(36).slice(2,7); }
 function todayISO(){ return new Date().toISOString().slice(0,10); }
+function addDaysISO(iso, n){
+  const d = new Date(iso + "T00:00:00");
+  d.setDate(d.getDate() + n);
+  return d.toISOString().slice(0,10);
+}
+function addMonthISO(iso){
+  const d = new Date(iso + "T00:00:00");
+  d.setMonth(d.getMonth() + 1);
+  return d.toISOString().slice(0,10);
+}
+function formatTimeNice(t){
+  if(!t) return "";
+  const [h,m] = t.split(":").map(Number);
+  const ampm = h >= 12 ? "PM" : "AM";
+  const h12 = h % 12 === 0 ? 12 : h % 12;
+  return `${h12}:${String(m).padStart(2,"0")} ${ampm}`;
+}
 function formatDateNice(iso){
   if(!iso) return "—";
   const d = new Date(iso + "T00:00:00");
@@ -999,6 +1226,125 @@ function escapeHtml(s){
 }
 
 /* =========================================================
+   DATA MIGRATION
+   Fills in fields added by later versions of the app so jobs
+   and customers saved before this update keep working.
+========================================================= */
+function migrateData(){
+  let jobs = Store.getJobs();
+  let jobsChanged = false;
+  jobs = jobs.map(j=>{
+    const p = { ...j };
+    if(!p.status){ p.status = p.paymentStatus === "Paid" ? "Completed" : "Scheduled"; jobsChanged = true; }
+    if(p.amountPaid === undefined){ p.amountPaid = p.paymentStatus === "Paid" ? p.total : 0; jobsChanged = true; }
+    if(p.paymentDate === undefined){ p.paymentDate = p.paymentStatus === "Paid" ? (p.invoiceDate || todayISO()) : null; jobsChanged = true; }
+    if(p.scheduledTime === undefined){ p.scheduledTime = "10:00"; jobsChanged = true; }
+    if(p.notes === undefined){ p.notes = ""; jobsChanged = true; }
+    if(p.recurringId === undefined){ p.recurringId = null; jobsChanged = true; }
+    return p;
+  });
+  if(jobsChanged) Store.setJobs(jobs);
+
+  let customers = Store.getCustomers();
+  let customersChanged = false;
+  customers = customers.map(c=>{
+    const p = { ...c };
+    if(p.notes === undefined){ p.notes = ""; customersChanged = true; }
+    if(p.dateAdded === undefined){ p.dateAdded = todayISO(); customersChanged = true; }
+    if(p.recurring === undefined){ p.recurring = null; customersChanged = true; }
+    return p;
+  });
+  if(customersChanged) Store.setCustomers(customers);
+}
+
+/* =========================================================
+   RECURRING JOBS
+========================================================= */
+function makeRecurringJob(cust, rec, dateOverride){
+  const config = Store.getConfig();
+  const date = dateOverride || rec.nextDate;
+  return {
+    id: uid("job"),
+    invoiceNumber: nextInvoiceNumber(),
+    customerId: cust.id, customerName: cust.name, propertyAddress: cust.address,
+    customerPhone: cust.phone, customerEmail: cust.email,
+    quote: { ...rec.quote, price: rec.price, recommended: rec.price, duration: computeDurationMinutes(config, rec.quote), description: buildServiceDescription(rec.quote) },
+    subtotal: rec.price, discount:0, taxPct: config.taxRate, tax:0, total: rec.price,
+    serviceDate: date, scheduledTime: rec.time || "10:00",
+    invoiceDate: date, dueDate: date,
+    paymentMethod: config.paymentMethods[0] || "Cash",
+    paymentStatus: "Unpaid", amountPaid:0, paymentDate:null,
+    status: "Scheduled",
+    notes:"",
+    recurringId: rec.id,
+    createdAt: Date.now()
+  };
+}
+function ensureUpcomingRecurringJobs(){
+  const customers = Store.getCustomers();
+  const jobs = Store.getJobs();
+  const horizon = addDaysISO(todayISO(), 56); // generate 8 weeks ahead
+  let custChanged = false;
+  let jobsChanged = false;
+
+  customers.forEach(cust=>{
+    const rec = cust.recurring;
+    if(!rec) return;
+
+    if(rec.frequency === "onetime"){
+      if(!rec.generated){
+        jobs.push(makeRecurringJob(cust, rec));
+        rec.generated = true;
+        custChanged = true; jobsChanged = true;
+      }
+      return;
+    }
+
+    let guard = 0;
+    while(rec.nextDate && rec.nextDate <= horizon && guard < 12){
+      const exists = jobs.some(j=> j.recurringId === rec.id && j.serviceDate === rec.nextDate);
+      if(!exists){
+        jobs.push(makeRecurringJob(cust, rec, rec.nextDate));
+        jobsChanged = true;
+      }
+      rec.nextDate = rec.frequency === "monthly" ? addMonthISO(rec.nextDate) : addDaysISO(rec.nextDate, FREQUENCY_DAYS[rec.frequency] || 7);
+      custChanged = true;
+      guard++;
+    }
+  });
+
+  if(custChanged) Store.setCustomers(customers);
+  if(jobsChanged) Store.setJobs(jobs);
+}
+
+/* =========================================================
+   JOB HELPERS
+========================================================= */
+function setJobField(jobId, patch){
+  const jobs = Store.getJobs();
+  const idx = jobs.findIndex(j=>j.id===jobId);
+  if(idx < 0) return null;
+  jobs[idx] = { ...jobs[idx], ...patch };
+  Store.setJobs(jobs);
+  if(State.activeJob && State.activeJob.id === jobId) State.activeJob = jobs[idx];
+  return jobs[idx];
+}
+function getCustomerStats(customerId){
+  const jobs = Store.getJobs().filter(j=> j.customerId === customerId && j.status !== "Cancelled");
+  const today = todayISO();
+  const totalJobs = jobs.length;
+  const totalRevenue = jobs.reduce((s,j)=> s + (j.paymentStatus === "Paid" ? (j.amountPaid||j.total) : 0), 0);
+  const totalUnpaid = jobs.reduce((s,j)=> s + (j.paymentStatus === "Paid" ? 0 : Math.max(0, j.total - (j.amountPaid||0))), 0);
+  const past = jobs.filter(j=> j.serviceDate && j.serviceDate <= today).sort((a,b)=> b.serviceDate.localeCompare(a.serviceDate));
+  const future = jobs.filter(j=> j.status === "Scheduled" && j.serviceDate && j.serviceDate >= today).sort((a,b)=> a.serviceDate.localeCompare(b.serviceDate));
+  return {
+    totalJobs, totalRevenue, totalUnpaid,
+    lastService: past[0]?.serviceDate || null,
+    nextService: future[0]?.serviceDate || null
+  };
+}
+
+/* =========================================================
    ROUTER / RENDER
 ========================================================= */
 const main = document.getElementById("main");
@@ -1011,26 +1357,63 @@ function navigate(page){
   render();
 }
 document.querySelectorAll(".nav-item").forEach(el=>{
-  el.addEventListener("click", ()=> navigate(el.dataset.nav));
+  el.addEventListener("click", ()=>{
+    if(el.dataset.nav === "quotes"){ startNewQuote(); }
+    else{ navigate(el.dataset.nav); }
+  });
 });
-document.getElementById("new-quote-btn").addEventListener("click", startNewQuote);
+
+function clearNavActive(){
+  document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));
+}
+function gotoCustomerProfile(customerId){
+  clearNavActive();
+  State.activeCustomerId = customerId;
+  State.page = "customerProfile";
+  render();
+}
+function gotoJobDetail(jobId, returnPage){
+  const job = Store.getJobs().find(j=>j.id===jobId);
+  if(!job){ navigate("jobs"); return; }
+  clearNavActive();
+  State.activeJob = job;
+  if(returnPage) State.jobDetailReturn = returnPage;
+  State.page = "jobDetail";
+  render();
+}
+function gotoInvoice(jobId){
+  const job = Store.getJobs().find(j=>j.id===jobId);
+  if(!job){ navigate("dashboard"); return; }
+  clearNavActive();
+  State.activeJob = job;
+  State.page = "invoice";
+  render();
+}
 
 function startNewQuote(){
   State.wizardStep = 0;
   State.selections = {};
   State.manualPrice = null;
   State.activeJob = null;
-  document.querySelectorAll(".nav-item").forEach(el=>el.classList.remove("active"));
+  State.editingCustomerId = null;
+  clearNavActive();
   State.page = "wizard";
   render();
 }
 
 function render(){
+  try{ ensureUpcomingRecurringJobs(); }catch(e){ console.error(e); }
   renderSidebarRecent();
   if(State.page === "dashboard") return renderDashboard();
+  if(State.page === "customers") return renderCustomers();
+  if(State.page === "customerProfile") return renderCustomerProfile();
+  if(State.page === "schedule") return renderSchedule();
+  if(State.page === "jobs") return renderJobsList();
+  if(State.page === "invoices") return renderInvoicesList();
   if(State.page === "wizard") return renderWizard();
   if(State.page === "result") return renderResult();
   if(State.page === "customerInfo") return renderCustomerInfo();
+  if(State.page === "jobDetail") return renderJobDetail();
   if(State.page === "invoice") return renderInvoice();
   if(State.page === "settings") return renderSettings();
 }
@@ -1050,78 +1433,107 @@ function renderSidebarRecent(){
     </button>
   `).join("");
   el.querySelectorAll(".sidebar-recent-item").forEach(btn=>{
-    btn.addEventListener("click", ()=>{
-      const job = Store.getJobs().find(j=>j.id === btn.dataset.job);
-      if(job){
-        State.activeJob = job;
-        State.page = "invoice";
-        document.querySelectorAll(".nav-item").forEach(n=>n.classList.remove("active"));
-        render();
-      }
-    });
+    btn.addEventListener("click", ()=> gotoInvoice(btn.dataset.job));
   });
 }
 
 /* ---------------- DASHBOARD ---------------- */
+function startOfWeekISO(d){
+  const dt = new Date(d);
+  dt.setDate(dt.getDate() - dt.getDay());
+  return dt.toISOString().slice(0,10);
+}
 function renderDashboard(){
-  const jobs = Store.getJobs().slice().sort((a,b)=> (b.createdAt||0) - (a.createdAt||0));
-  const totalRevenue = jobs.reduce((s,j)=> s + (j.paymentStatus === "Paid" ? j.total : 0), 0);
-  const outstanding = jobs.reduce((s,j)=> s + (j.paymentStatus === "Paid" ? 0 : j.total), 0);
-  const thisMonthCount = jobs.filter(j=>{
-    const d = new Date(j.createdAt || 0);
-    const n = new Date();
-    return d.getMonth() === n.getMonth() && d.getFullYear() === n.getFullYear();
-  }).length;
+  const jobs = Store.getJobs();
+  const customers = Store.getCustomers();
+  const today = todayISO();
+  const now = new Date();
+  const active = jobs.filter(j=> j.status !== "Cancelled");
+
+  const weekStart = startOfWeekISO(now);
+  const weekEnd = addDaysISO(weekStart, 6);
+  const monthStart = new Date(now.getFullYear(), now.getMonth(), 1).toISOString().slice(0,10);
+  const monthEnd = new Date(now.getFullYear(), now.getMonth()+1, 0).toISOString().slice(0,10);
+
+  const inRange = (j, from, to) => j.serviceDate && j.serviceDate >= from && j.serviceDate <= to;
+  const paidAmt = j => j.paymentStatus === "Paid" ? (j.amountPaid || j.total) : 0;
+  const unpaidAmt = j => j.paymentStatus === "Paid" ? 0 : Math.max(0, j.total - (j.amountPaid||0));
+  const isDone = j => j.status === "Completed" || j.paymentStatus === "Paid";
+
+  const weekJobs = active.filter(j=> inRange(j, weekStart, weekEnd));
+  const weekRevenue = weekJobs.reduce((s,j)=> s + paidAmt(j), 0);
+  const weekCompleted = weekJobs.filter(isDone).length;
+  const weekScheduled = weekJobs.filter(j=> j.status === "Scheduled").length;
+  const weekUnpaid = weekJobs.reduce((s,j)=> s + unpaidAmt(j), 0);
+
+  const monthJobs = active.filter(j=> inRange(j, monthStart, monthEnd));
+  const monthRevenue = monthJobs.reduce((s,j)=> s + paidAmt(j), 0);
+  const monthCompleted = monthJobs.filter(isDone).length;
+  const monthAvg = monthJobs.length ? monthJobs.reduce((s,j)=>s+j.total,0) / monthJobs.length : 0;
+  const monthCustomers = new Set(monthJobs.map(j=>j.customerId)).size;
+  const monthUnpaid = monthJobs.reduce((s,j)=> s + unpaidAmt(j), 0);
+
+  const allRevenue = active.reduce((s,j)=> s + paidAmt(j), 0);
+  const allCompleted = active.filter(isDone).length;
+  const allAvg = active.length ? active.reduce((s,j)=>s+j.total,0) / active.length : 0;
+  const allUnpaid = active.reduce((s,j)=> s + unpaidAmt(j), 0);
+
+  const outstanding = active.filter(j=> j.paymentStatus !== "Paid").sort((a,b)=> (a.serviceDate||"").localeCompare(b.serviceDate||""));
 
   main.innerHTML = `
     <div class="page-header">
       <div>
         <h1 class="page-title">Dashboard</h1>
-        <p class="page-desc">Your quotes and invoices, all in one place.</p>
+        <p class="page-desc">A quick look at how the business is doing.</p>
       </div>
       <button class="btn btn-primary btn-lg" id="dash-new-quote">+ New Quote</button>
     </div>
 
+    <div class="section-label">This Week</div>
     <div class="stat-row">
-      <div class="stat-card">
-        <div class="stat-label">Jobs this month</div>
-        <div class="stat-value">${thisMonthCount}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Total jobs</div>
-        <div class="stat-value">${jobs.length}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Collected</div>
-        <div class="stat-value accent">${formatMoney(totalRevenue)}</div>
-      </div>
-      <div class="stat-card">
-        <div class="stat-label">Outstanding</div>
-        <div class="stat-value" style="color:var(--amber)">${formatMoney(outstanding)}</div>
-      </div>
+      <div class="stat-card"><div class="stat-label">Revenue</div><div class="stat-value accent">${formatMoney(weekRevenue)}</div></div>
+      <div class="stat-card"><div class="stat-label">Jobs completed</div><div class="stat-value">${weekCompleted}</div></div>
+      <div class="stat-card"><div class="stat-label">Jobs scheduled</div><div class="stat-value">${weekScheduled}</div></div>
+      <div class="stat-card"><div class="stat-label">Unpaid</div><div class="stat-value" style="color:var(--amber)">${formatMoney(weekUnpaid)}</div></div>
     </div>
 
-    <div class="section-label">Recent jobs</div>
-    ${jobs.length === 0 ? `
-      <div class="job-table">
-        <div class="empty-state">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V6a2 2 0 0 1 2-2h9l5 5v10a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2Z"/><path d="M14 4v5h5"/></svg>
-          <p>No jobs yet. Start your first quote to get going.</p>
-          <button class="btn btn-primary" id="dash-empty-new-quote">+ New Quote</button>
-        </div>
-      </div>
+    <div class="section-label">This Month</div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-label">Revenue</div><div class="stat-value accent">${formatMoney(monthRevenue)}</div></div>
+      <div class="stat-card"><div class="stat-label">Jobs completed</div><div class="stat-value">${monthCompleted}</div></div>
+      <div class="stat-card"><div class="stat-label">Avg. job price</div><div class="stat-value">${formatMoney(monthAvg)}</div></div>
+      <div class="stat-card"><div class="stat-label">Customers serviced</div><div class="stat-value">${monthCustomers}</div></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-label">Unpaid this month</div><div class="stat-value" style="color:var(--amber)">${formatMoney(monthUnpaid)}</div></div>
+    </div>
+
+    <div class="section-label">All Time</div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-label">Total revenue</div><div class="stat-value accent">${formatMoney(allRevenue)}</div></div>
+      <div class="stat-card"><div class="stat-label">Completed jobs</div><div class="stat-value">${allCompleted}</div></div>
+      <div class="stat-card"><div class="stat-label">Total customers</div><div class="stat-value">${customers.length}</div></div>
+      <div class="stat-card"><div class="stat-label">Avg. job price</div><div class="stat-value">${formatMoney(allAvg)}</div></div>
+    </div>
+    <div class="stat-row">
+      <div class="stat-card"><div class="stat-label">Total unpaid</div><div class="stat-value" style="color:var(--amber)">${formatMoney(allUnpaid)}</div></div>
+    </div>
+
+    <div class="section-label">Outstanding / Unpaid</div>
+    ${outstanding.length === 0 ? `
+      <div class="job-table"><div class="empty-state"><p>Nothing outstanding — everything's paid up.</p></div></div>
     ` : `
       <div class="job-table">
-        <div class="job-row head">
-          <div>Customer</div><div>Property</div><div>Service Date</div><div>Price</div><div>Status</div><div>Invoice #</div><div></div>
+        <div class="job-row head" style="grid-template-columns:1.4fr 1.4fr 1fr .8fr .8fr .9fr 32px;">
+          <div>Customer</div><div>Property</div><div>Service Date</div><div>Owed</div><div>Status</div><div>Invoice #</div><div></div>
         </div>
-        ${jobs.map(j=>`
-          <div class="job-row" data-job="${j.id}">
+        ${outstanding.map(j=>`
+          <div class="job-row" data-job="${j.id}" style="grid-template-columns:1.4fr 1.4fr 1fr .8fr .8fr .9fr 32px;">
             <div class="job-cell strong">${escapeHtml(j.customerName || "—")}</div>
             <div class="job-cell">${escapeHtml(j.propertyAddress || "—")}</div>
             <div class="job-cell">${formatDateNice(j.serviceDate)}</div>
-            <div class="job-cell strong">${formatMoney(j.total)}</div>
-            <div><span class="badge ${j.paymentStatus === 'Paid' ? 'paid' : 'unpaid'}">${j.paymentStatus}</span></div>
+            <div class="job-cell strong" style="color:var(--amber)">${formatMoney(j.total - (j.amountPaid||0))}</div>
+            <div><span class="badge ${j.status.toLowerCase()}">${j.status}</span></div>
             <div class="job-cell">${escapeHtml(j.invoiceNumber)}</div>
             <div><button class="row-delete-btn" data-delete-job="${j.id}" title="Delete invoice" aria-label="Delete invoice">
               <svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2m-9 0 1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/></svg>
@@ -1132,18 +1544,11 @@ function renderDashboard(){
     `}
   `;
   document.getElementById("dash-new-quote")?.addEventListener("click", startNewQuote);
-  document.getElementById("dash-empty-new-quote")?.addEventListener("click", startNewQuote);
   document.querySelectorAll(".job-row[data-job]").forEach(el=>{
-    el.addEventListener("click", ()=>{
-      const job = Store.getJobs().find(j=>j.id === el.dataset.job);
-      if(job){ State.activeJob = job; State.page = "invoice"; render(); }
-    });
+    el.addEventListener("click", ()=> gotoJobDetail(el.dataset.job, "dashboard"));
   });
   document.querySelectorAll("[data-delete-job]").forEach(btn=>{
-    btn.addEventListener("click", (e)=>{
-      e.stopPropagation();
-      deleteJob(btn.dataset.deleteJob);
-    });
+    btn.addEventListener("click", (e)=>{ e.stopPropagation(); deleteJob(btn.dataset.deleteJob); });
   });
 }
 
@@ -1250,7 +1655,7 @@ function renderResult(){
         <div class="price-recommended-note">${State.manualPrice !== null ? "Adjusted · auto-recommended " + formatMoney(recommended) : "Auto-calculated from job details"}</div>
         <div class="price-actions">
           <button class="btn" id="btn-adjust">Adjust Price</button>
-          <button class="btn btn-primary" id="btn-create-invoice">Create Invoice</button>
+          <button class="btn btn-primary" id="btn-create-invoice">Save Job &amp; Create Invoice</button>
         </div>
         <div class="adjust-box" id="adjust-box">
           <input type="number" id="adjust-input" step="1" value="${finalPrice}">
@@ -1302,8 +1707,8 @@ function renderCustomerInfo(){
   main.innerHTML = `
     <div class="page-header">
       <div>
-        <h1 class="page-title">Customer &amp; Invoice Info</h1>
-        <p class="page-desc">Just the details needed to send the invoice.</p>
+        <h1 class="page-title">Customer &amp; Job Info</h1>
+        <p class="page-desc">Saves this as a scheduled job and generates its invoice.</p>
       </div>
       <button class="btn btn-ghost" id="ci-back">← Back to price</button>
     </div>
@@ -1344,6 +1749,10 @@ function renderCustomerInfo(){
         <div class="field">
           <label>Service Date</label>
           <input type="date" id="f-servdate" value="${today}">
+        </div>
+        <div class="field">
+          <label>Service Time</label>
+          <input type="time" id="f-servtime" value="10:00">
         </div>
         <div class="field">
           <label>Due Date</label>
@@ -1444,7 +1853,7 @@ function renderCustomerInfo(){
         existing.email = email || existing.email;
       }else{
         customerId = uid("cust");
-        list.push({ id:customerId, name, address, phone, email });
+        list.push({ id:customerId, name, address, phone, email, notes:"", dateAdded: todayISO(), recurring:null });
       }
     }
     Store.setCustomers(list);
@@ -1461,9 +1870,15 @@ function renderCustomerInfo(){
       customerId, customerName:name, propertyAddress:address, customerPhone:phone, customerEmail:email,
       invoiceDate: document.getElementById("f-invdate").value,
       serviceDate: document.getElementById("f-servdate").value,
+      scheduledTime: document.getElementById("f-servtime").value || "10:00",
       dueDate: document.getElementById("f-duedate").value,
       paymentMethod: document.getElementById("f-paymethod").value,
       paymentStatus,
+      amountPaid: paymentStatus === "Paid" ? total : 0,
+      paymentDate: paymentStatus === "Paid" ? document.getElementById("f-invdate").value : null,
+      status: "Scheduled",
+      notes: "",
+      recurringId: null,
       quote:{ ...sel, price:finalPrice, recommended, duration:computeDurationMinutes(config, sel), description: buildServiceDescription(sel) },
       subtotal, discount, taxPct, tax, total,
       createdAt: Date.now()
@@ -1491,13 +1906,14 @@ function renderInvoice(){
         <h1 class="page-title">Invoice ${escapeHtml(job.invoiceNumber)}</h1>
         <p class="page-desc">Preview, then download, print, or share with your customer.</p>
       </div>
-      <button class="btn btn-ghost" id="inv-back">← Dashboard</button>
+      <button class="btn btn-ghost" id="inv-back">← Invoices</button>
     </div>
 
     <div class="invoice-toolbar">
       <button class="btn btn-primary" id="inv-pdf">Download PDF</button>
       <button class="btn" id="inv-print">Print</button>
       <button class="btn" id="inv-share">Share</button>
+      <button class="btn" id="inv-view-job">View Job</button>
       <button class="btn" id="inv-delete" style="color:var(--red)">Delete</button>
       <div class="status-toggle">
         <button class="btn ${job.paymentStatus === 'Unpaid' ? 'btn-primary' : ''}" id="inv-mark-unpaid">Mark Unpaid</button>
@@ -1564,25 +1980,31 @@ function renderInvoice(){
     </div>
   `;
 
-  document.getElementById("inv-back").addEventListener("click", ()=> navigate("dashboard"));
+  document.getElementById("inv-back").addEventListener("click", ()=> navigate("invoices"));
   document.getElementById("inv-print").addEventListener("click", ()=> window.print());
   document.getElementById("inv-mark-paid").addEventListener("click", ()=> setJobStatus(job.id, "Paid"));
   document.getElementById("inv-mark-unpaid").addEventListener("click", ()=> setJobStatus(job.id, "Unpaid"));
   document.getElementById("inv-pdf").addEventListener("click", ()=> downloadInvoicePdf(job));
   document.getElementById("inv-share").addEventListener("click", ()=> shareInvoice(job));
+  document.getElementById("inv-view-job").addEventListener("click", ()=> gotoJobDetail(job.id, "invoices"));
   document.getElementById("inv-delete").addEventListener("click", ()=> deleteJob(job.id));
 }
 
-function setJobStatus(jobId, status){
-  const jobs = Store.getJobs();
-  const idx = jobs.findIndex(j=>j.id === jobId);
-  if(idx > -1){
-    jobs[idx].paymentStatus = status;
-    Store.setJobs(jobs);
-    State.activeJob = jobs[idx];
-    render();
-    showToast("Marked as " + status);
+function setJobStatus(jobId, paymentStatus){
+  const job = Store.getJobs().find(j=>j.id === jobId);
+  if(!job) return;
+  const patch = { paymentStatus };
+  if(paymentStatus === "Paid"){
+    patch.amountPaid = job.total;
+    patch.paymentDate = todayISO();
+    if(job.status === "Scheduled") patch.status = "Completed";
+  }else{
+    patch.amountPaid = 0;
+    patch.paymentDate = null;
   }
+  setJobField(jobId, patch);
+  render();
+  showToast("Marked as " + paymentStatus);
 }
 
 function downloadInvoicePdf(job){
@@ -1613,6 +2035,707 @@ function shareInvoice(job){
 }
 
 /* ---------------- SETTINGS ---------------- */
+/* (Customers, Schedule, Jobs, Invoices, and Job Detail pages are defined below this point) */
+
+/* ---------------- CUSTOMERS ---------------- */
+function renderCustomers(){
+  const customers = Store.getCustomers();
+  const q = (State.customerSearch || "").toLowerCase().trim();
+  const filtered = customers
+    .filter(c=>{
+      if(!q) return true;
+      return (c.name||"").toLowerCase().includes(q) || (c.phone||"").toLowerCase().includes(q) || (c.address||"").toLowerCase().includes(q);
+    })
+    .sort((a,b)=> (a.name||"").localeCompare(b.name||""));
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Customers</h1>
+        <p class="page-desc">Everyone you've quoted or serviced, with their job history.</p>
+      </div>
+      <button class="btn btn-primary btn-lg" id="cust-add-toggle">+ Add Customer</button>
+    </div>
+
+    <div class="settings-section" id="add-customer-form" style="display:${State.showAddCustomerForm ? "block" : "none"};">
+      <h3>New Customer</h3>
+      <div class="form-grid">
+        <div class="field span-2"><label>Name</label><input id="nc-name" placeholder="Jane Smith"></div>
+        <div class="field"><label>Phone</label><input id="nc-phone" placeholder="(719) 555-0100"></div>
+        <div class="field"><label>Email</label><input id="nc-email" placeholder="jane@email.com"></div>
+        <div class="field span-2"><label>Property / Service Address</label><input id="nc-address" placeholder="123 Maple St, Colorado Springs, CO"></div>
+        <div class="field span-2"><label>Notes</label><textarea class="notes-box" id="nc-notes" placeholder="Gate is on the side of the house, dog stays inside, etc."></textarea></div>
+      </div>
+      <div class="form-actions">
+        <button class="btn btn-primary" id="nc-save">Save Customer</button>
+        <button class="btn btn-ghost" id="nc-cancel">Cancel</button>
+      </div>
+    </div>
+
+    <div class="search-input-wrap">
+      <input type="text" id="cust-search" placeholder="Search by name, phone, or address…" value="${escapeHtml(State.customerSearch||"")}">
+    </div>
+
+    ${filtered.length === 0 ? `
+      <div class="job-table"><div class="empty-state"><p>${customers.length === 0 ? "No customers yet — add one, or create a quote and it'll be saved automatically." : "No customers match that search."}</p></div></div>
+    ` : `
+      <div class="job-table">
+        <div class="customer-card-row head">
+          <div>Customer</div><div>Address</div><div>Last Service</div><div>Next Service</div><div>Total Jobs</div><div>Unpaid</div>
+        </div>
+        ${filtered.map(c=>{
+          const stats = getCustomerStats(c.id);
+          return `
+            <div class="customer-card-row" data-customer="${c.id}">
+              <div>
+                <div class="customer-name-cell">${escapeHtml(c.name)}</div>
+                <div class="customer-sub-cell">${escapeHtml(c.phone || "N/A")}</div>
+              </div>
+              <div class="cc-stat">${escapeHtml(c.address || "—")}</div>
+              <div class="cc-stat">${stats.lastService ? formatDateNice(stats.lastService) : "—"}</div>
+              <div class="cc-stat">${stats.nextService ? formatDateNice(stats.nextService) : "—"}</div>
+              <div class="cc-stat">${stats.totalJobs}</div>
+              <div class="cc-stat ${stats.totalUnpaid > 0 ? "warn" : "accent"}">${formatMoney(stats.totalUnpaid)}</div>
+            </div>
+          `;
+        }).join("")}
+      </div>
+    `}
+  `;
+
+  document.getElementById("cust-add-toggle").addEventListener("click", ()=>{
+    State.showAddCustomerForm = !State.showAddCustomerForm;
+    render();
+  });
+  document.getElementById("nc-cancel")?.addEventListener("click", ()=>{
+    State.showAddCustomerForm = false;
+    render();
+  });
+  document.getElementById("nc-save")?.addEventListener("click", ()=>{
+    const name = document.getElementById("nc-name").value.trim();
+    const address = document.getElementById("nc-address").value.trim();
+    if(!name){ showToast("Customer name is required."); return; }
+    const list = Store.getCustomers();
+    list.push({
+      id: uid("cust"), name, address,
+      phone: document.getElementById("nc-phone").value.trim(),
+      email: document.getElementById("nc-email").value.trim(),
+      notes: document.getElementById("nc-notes").value.trim(),
+      dateAdded: todayISO(),
+      recurring: null
+    });
+    Store.setCustomers(list);
+    State.showAddCustomerForm = false;
+    render();
+    showToast("Customer added.");
+  });
+  document.getElementById("cust-search").addEventListener("input", (e)=>{
+    State.customerSearch = e.target.value;
+    render();
+    document.getElementById("cust-search").focus();
+    const v = document.getElementById("cust-search").value;
+    document.getElementById("cust-search").setSelectionRange(v.length, v.length);
+  });
+  document.querySelectorAll("[data-customer]").forEach(el=>{
+    el.addEventListener("click", ()=> gotoCustomerProfile(el.dataset.customer));
+  });
+}
+
+
+/* ---------------- CUSTOMER PROFILE ---------------- */
+function renderCustomerProfile(){
+  const customers = Store.getCustomers();
+  const cust = customers.find(c=>c.id === State.activeCustomerId);
+  if(!cust){ navigate("customers"); return; }
+  const stats = getCustomerStats(cust.id);
+  const jobs = Store.getJobs().filter(j=>j.customerId === cust.id).sort((a,b)=> (b.serviceDate||"").localeCompare(a.serviceDate||""));
+  const rec = cust.recurring;
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">${escapeHtml(cust.name)}</h1>
+        <p class="page-desc">Customer since ${formatDateNice(cust.dateAdded)}</p>
+      </div>
+      <button class="btn btn-ghost" id="cp-back">← Customers</button>
+    </div>
+
+    <div class="profile-layout">
+      <div>
+        <div class="profile-card">
+          <div class="form-grid full">
+            <div class="field"><label>Name</label><input id="cp-name" value="${escapeHtml(cust.name)}"></div>
+            <div class="field"><label>Phone</label><input id="cp-phone" value="${escapeHtml(cust.phone||"")}"></div>
+            <div class="field"><label>Email</label><input id="cp-email" value="${escapeHtml(cust.email||"")}"></div>
+            <div class="field"><label>Property Address</label><input id="cp-address" value="${escapeHtml(cust.address||"")}"></div>
+          </div>
+
+          <div class="profile-stat-grid">
+            <div class="profile-stat"><div class="profile-stat-label">Last Service</div><div class="profile-stat-value">${stats.lastService ? formatDateNice(stats.lastService) : "—"}</div></div>
+            <div class="profile-stat"><div class="profile-stat-label">Next Service</div><div class="profile-stat-value">${stats.nextService ? formatDateNice(stats.nextService) : "—"}</div></div>
+            <div class="profile-stat"><div class="profile-stat-label">Total Jobs</div><div class="profile-stat-value">${stats.totalJobs}</div></div>
+            <div class="profile-stat"><div class="profile-stat-label">Total Revenue</div><div class="profile-stat-value accent">${formatMoney(stats.totalRevenue)}</div></div>
+            <div class="profile-stat" style="grid-column:span 2;"><div class="profile-stat-label">Unpaid</div><div class="profile-stat-value ${stats.totalUnpaid>0?'warn':'accent'}">${formatMoney(stats.totalUnpaid)}</div></div>
+          </div>
+
+          <div class="field" style="margin-bottom:10px;">
+            <label>Notes</label>
+            <textarea class="notes-box" id="cp-notes" placeholder="Gate is on the side of the house, dog stays inside, prefers Saturday mornings…">${escapeHtml(cust.notes||"")}</textarea>
+          </div>
+          <button class="btn btn-primary" id="cp-save" style="width:100%;justify-content:center;">Save Changes</button>
+        </div>
+
+        <div class="settings-section" style="margin-top:18px;">
+          <h3>Recurring Service</h3>
+          ${rec ? `
+            <div class="recurring-card">
+              <div class="recurring-summary-title">${FREQUENCY_LABELS[rec.frequency] || rec.frequency}</div>
+              <div class="recurring-summary-detail">
+                ${buildServiceDescription(rec.quote)} · ${formatMoney(rec.price)}<br>
+                ${rec.frequency === "onetime" ? "One-time" : "Next: " + formatDateNice(rec.nextDate)} at ${formatTimeNice(rec.time)}
+              </div>
+            </div>
+            <div class="form-actions">
+              <button class="btn" id="rec-edit-toggle">Edit</button>
+              <button class="btn" id="rec-stop" style="color:var(--red)">Stop Recurring</button>
+            </div>
+          ` : `
+            <p class="settings-desc">No recurring schedule set up for this customer yet.</p>
+            <button class="btn btn-primary" id="rec-edit-toggle">Set Up Recurring Service</button>
+          `}
+          <div id="recurring-form" style="display:${State.recurringFormOpen ? "block" : "none"};margin-top:16px;">
+            ${renderRecurringFormHtml(cust)}
+          </div>
+        </div>
+      </div>
+
+      <div>
+        <div class="section-label">Job History</div>
+        ${jobs.length === 0 ? `
+          <div class="history-table"><div class="empty-state"><p>No jobs yet for this customer.</p></div></div>
+        ` : `
+          <div class="history-table">
+            <div class="history-row head"><div>Date</div><div>Services</div><div>Price</div><div>Status</div></div>
+            ${jobs.map(j=>`
+              <div class="history-row" data-job="${j.id}">
+                <div class="job-cell">${formatDateNice(j.serviceDate)}</div>
+                <div class="job-cell">${escapeHtml(j.quote.description)}</div>
+                <div class="job-cell strong">${formatMoney(j.total)}</div>
+                <div><span class="badge ${j.paymentStatus==='Paid' ? 'paid' : (j.status||'').toLowerCase()}">${j.paymentStatus==='Paid' ? 'Paid' : j.status}</span></div>
+              </div>
+            `).join("")}
+          </div>
+        `}
+      </div>
+    </div>
+  `;
+
+  document.getElementById("cp-back").addEventListener("click", ()=> navigate("customers"));
+  document.getElementById("cp-save").addEventListener("click", ()=>{
+    const list = Store.getCustomers();
+    const idx = list.findIndex(c=>c.id === cust.id);
+    if(idx > -1){
+      list[idx] = {
+        ...list[idx],
+        name: document.getElementById("cp-name").value.trim() || list[idx].name,
+        phone: document.getElementById("cp-phone").value.trim(),
+        email: document.getElementById("cp-email").value.trim(),
+        address: document.getElementById("cp-address").value.trim(),
+        notes: document.getElementById("cp-notes").value.trim()
+      };
+      Store.setCustomers(list);
+      showToast("Customer updated.");
+      render();
+    }
+  });
+  document.querySelectorAll(".history-row[data-job]").forEach(el=>{
+    el.addEventListener("click", ()=> gotoJobDetail(el.dataset.job, "customerProfile"));
+  });
+  document.getElementById("rec-edit-toggle")?.addEventListener("click", ()=>{
+    State.recurringFormOpen = !State.recurringFormOpen;
+    render();
+  });
+  document.getElementById("rec-stop")?.addEventListener("click", ()=> stopRecurring(cust.id));
+  wireRecurringForm(cust);
+}
+
+function renderRecurringFormHtml(cust){
+  const config = Store.getConfig();
+  const rec = cust.recurring;
+  const lastQuote = Store.getJobs().filter(j=>j.customerId===cust.id).sort((a,b)=>(b.createdAt||0)-(a.createdAt||0))[0]?.quote;
+  const q = (rec && rec.quote) || lastQuote || { size:"medium", weedeating:"light", edging:"no", blowing:"no", overgrowth:"normal", travel:"0-5" };
+  const price = rec ? rec.price : computeRecommendedPrice(config, q);
+  const nextDate = rec ? rec.nextDate : addDaysISO(todayISO(), 7);
+  const time = rec ? rec.time : "10:00";
+
+  function opts(key){
+    return Object.keys(LABELS[key]).map(v=> `<option value="${v}" ${q[key]===v?"selected":""}>${LABELS[key][v]}</option>`).join("");
+  }
+
+  return `
+    <div class="form-grid">
+      <div class="field">
+        <label>Frequency</label>
+        <select id="rec-frequency">
+          ${Object.keys(FREQUENCY_LABELS).map(f=>`<option value="${f}" ${rec && rec.frequency===f ? "selected":""}>${FREQUENCY_LABELS[f]}</option>`).join("")}
+        </select>
+      </div>
+      <div class="field"><label>${rec && rec.frequency==='onetime' ? "Date" : "Next Date"}</label><input type="date" id="rec-date" value="${nextDate}"></div>
+      <div class="field"><label>Time</label><input type="time" id="rec-time" value="${time}"></div>
+      <div class="field"><label>Lawn Size</label><select id="rec-size">${opts("lawnSize")}</select></div>
+      <div class="field"><label>Weedeating</label><select id="rec-weedeating">${opts("weedeating")}</select></div>
+      <div class="field"><label>Edging</label><select id="rec-edging">${opts("edging")}</select></div>
+      <div class="field"><label>Blowing</label><select id="rec-blowing">${opts("blowing")}</select></div>
+      <div class="field"><label>Overgrowth</label><select id="rec-overgrowth">${opts("overgrowth")}</select></div>
+      <div class="field"><label>Travel</label><select id="rec-travel">${opts("travel")}</select></div>
+      <div class="field"><label>Price</label><div class="prefix-wrap"><span style="position:absolute;left:10px;top:50%;transform:translateY(-50%);color:var(--text-2);">$</span><input type="number" id="rec-price" value="${price}" style="padding-left:22px;"></div></div>
+    </div>
+    <div class="form-actions">
+      <button class="btn btn-primary" id="rec-save">Save Recurring Service</button>
+      <button class="btn btn-ghost" id="rec-cancel">Cancel</button>
+    </div>
+  `;
+}
+
+function wireRecurringForm(cust){
+  const form = document.getElementById("recurring-form");
+  if(!form) return;
+  const config = Store.getConfig();
+  const recalcPrice = ()=>{
+    const sel = readRecurringSelects();
+    const priceInput = document.getElementById("rec-price");
+    if(priceInput) priceInput.value = computeRecommendedPrice(config, sel);
+  };
+  function readRecurringSelects(){
+    return {
+      size: document.getElementById("rec-size")?.value,
+      weedeating: document.getElementById("rec-weedeating")?.value,
+      edging: document.getElementById("rec-edging")?.value,
+      blowing: document.getElementById("rec-blowing")?.value,
+      overgrowth: document.getElementById("rec-overgrowth")?.value,
+      travel: document.getElementById("rec-travel")?.value
+    };
+  }
+  ["rec-size","rec-weedeating","rec-edging","rec-blowing","rec-overgrowth","rec-travel"].forEach(id=>{
+    document.getElementById(id)?.addEventListener("change", recalcPrice);
+  });
+  document.getElementById("rec-cancel")?.addEventListener("click", ()=>{
+    State.recurringFormOpen = false;
+    render();
+  });
+  document.getElementById("rec-save")?.addEventListener("click", ()=>{
+    const frequency = document.getElementById("rec-frequency").value;
+    const date = document.getElementById("rec-date").value;
+    const time = document.getElementById("rec-time").value || "10:00";
+    const price = parseFloat(document.getElementById("rec-price").value) || 0;
+    const quote = readRecurringSelects();
+    const customers = Store.getCustomers();
+    const idx = customers.findIndex(c=>c.id === cust.id);
+    if(idx < 0) return;
+    const existing = customers[idx].recurring;
+    customers[idx].recurring = {
+      id: existing?.id || uid("rec"),
+      frequency, time, quote, price,
+      nextDate: date,
+      generated: false
+    };
+    Store.setCustomers(customers);
+    State.recurringFormOpen = false;
+    render();
+    showToast("Recurring service saved.");
+  });
+}
+
+function stopRecurring(customerId){
+  if(!confirm("Stop recurring service for this customer? Upcoming auto-scheduled jobs that haven't happened yet will be removed. Past jobs stay on their history.")) return;
+  const customers = Store.getCustomers();
+  const cust = customers.find(c=>c.id === customerId);
+  if(!cust || !cust.recurring) return;
+  const recId = cust.recurring.id;
+  cust.recurring = null;
+  Store.setCustomers(customers);
+  const jobs = Store.getJobs().filter(j=> !(j.recurringId === recId && j.status === "Scheduled" && j.serviceDate >= todayISO()));
+  Store.setJobs(jobs);
+  render();
+  showToast("Recurring service stopped.");
+}
+
+/* ---------------- SCHEDULE ---------------- */
+function renderSchedule(){
+  if(!State.scheduleMonth){
+    const n = new Date();
+    State.scheduleMonth = { y:n.getFullYear(), m:n.getMonth() };
+  }
+  const { y, m } = State.scheduleMonth;
+  const jobs = Store.getJobs();
+  const jobsByDate = {};
+  jobs.forEach(j=>{ if(!j.serviceDate) return; (jobsByDate[j.serviceDate] = jobsByDate[j.serviceDate] || []).push(j); });
+
+  const firstOfMonth = new Date(y, m, 1);
+  const startWeekday = firstOfMonth.getDay();
+  const daysInMonth = new Date(y, m+1, 0).getDate();
+  const daysInPrevMonth = new Date(y, m, 0).getDate();
+  const totalCells = Math.ceil((startWeekday + daysInMonth) / 7) * 7;
+  const today = todayISO();
+
+  const cells = [];
+  for(let i=0;i<totalCells;i++){
+    const dayNum = i - startWeekday + 1;
+    let cellDate, otherMonth = false;
+    if(dayNum < 1){ cellDate = new Date(y, m-1, daysInPrevMonth + dayNum); otherMonth = true; }
+    else if(dayNum > daysInMonth){ cellDate = new Date(y, m+1, dayNum - daysInMonth); otherMonth = true; }
+    else{ cellDate = new Date(y, m, dayNum); }
+    const iso = cellDate.toISOString().slice(0,10);
+    cells.push({ iso, dayNum: cellDate.getDate(), otherMonth });
+  }
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Schedule</h1>
+        <p class="page-desc">What's booked, day by day.</p>
+      </div>
+      <button class="btn btn-primary btn-lg" id="sched-new-quote">+ New Quote</button>
+    </div>
+
+    <div class="cal-toolbar">
+      <button class="btn" id="cal-prev">← Prev</button>
+      <div class="cal-month-label">${MONTH_LABELS[m]} ${y}</div>
+      <button class="btn" id="cal-next">Next →</button>
+      <button class="btn btn-ghost" id="cal-today">Today</button>
+    </div>
+
+    <div class="cal-grid">
+      ${DOW_LABELS.map(d=>`<div class="cal-dow">${d}</div>`).join("")}
+      ${cells.map(c=>{
+        const dayJobs = (jobsByDate[c.iso] || []).sort((a,b)=> (a.scheduledTime||"").localeCompare(b.scheduledTime||""));
+        const shown = dayJobs.slice(0,3);
+        const extra = dayJobs.length - shown.length;
+        return `
+          <div class="cal-cell ${c.otherMonth ? "other-month" : ""} ${c.iso === today ? "today" : ""}">
+            <div class="cal-date-num">${c.dayNum}</div>
+            ${shown.map(j=>`
+              <div class="cal-job-chip ${j.paymentStatus==='Paid' ? 'paid' : j.status.toLowerCase()}" data-job="${j.id}" title="${escapeHtml(j.customerName)} — ${escapeHtml(j.quote.description)}">
+                ${formatTimeNice(j.scheduledTime)} ${escapeHtml(j.customerName)}
+              </div>
+            `).join("")}
+            ${extra > 0 ? `<div class="cal-more">+${extra} more</div>` : ""}
+          </div>
+        `;
+      }).join("")}
+    </div>
+  `;
+
+  document.getElementById("sched-new-quote").addEventListener("click", startNewQuote);
+  document.getElementById("cal-prev").addEventListener("click", ()=>{
+    State.scheduleMonth.m--;
+    if(State.scheduleMonth.m < 0){ State.scheduleMonth.m = 11; State.scheduleMonth.y--; }
+    render();
+  });
+  document.getElementById("cal-next").addEventListener("click", ()=>{
+    State.scheduleMonth.m++;
+    if(State.scheduleMonth.m > 11){ State.scheduleMonth.m = 0; State.scheduleMonth.y++; }
+    render();
+  });
+  document.getElementById("cal-today").addEventListener("click", ()=>{
+    const n = new Date();
+    State.scheduleMonth = { y:n.getFullYear(), m:n.getMonth() };
+    render();
+  });
+  document.querySelectorAll(".cal-job-chip").forEach(el=>{
+    el.addEventListener("click", ()=> gotoJobDetail(el.dataset.job, "schedule"));
+  });
+}
+
+/* ---------------- JOBS LIST ---------------- */
+function renderJobsList(){
+  const jobs = Store.getJobs().slice().sort((a,b)=> (b.serviceDate||"").localeCompare(a.serviceDate||""));
+  const filter = State.jobsFilter || "all";
+  const filtered = jobs.filter(j=>{
+    if(filter === "all") return true;
+    if(filter === "unpaid") return j.paymentStatus !== "Paid" && j.status !== "Cancelled";
+    return (j.status||"").toLowerCase() === filter;
+  });
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Jobs</h1>
+        <p class="page-desc">Every job that's been quoted, scheduled, or completed.</p>
+      </div>
+      <button class="btn btn-primary btn-lg" id="jobs-new-quote">+ New Quote</button>
+    </div>
+
+    <div class="filter-tabs">
+      ${["all","scheduled","completed","unpaid","cancelled"].map(f=>`
+        <button class="filter-tab ${filter===f?"active":""}" data-filter="${f}">${f[0].toUpperCase()+f.slice(1)}</button>
+      `).join("")}
+    </div>
+
+    ${filtered.length === 0 ? `
+      <div class="job-table"><div class="empty-state"><p>No jobs match this filter.</p></div></div>
+    ` : `
+      <div class="job-table">
+        <div class="job-row jobs-row head"><div>Customer</div><div>Property</div><div>Date</div><div>Price</div><div>Job Status</div><div>Payment</div><div>Invoice #</div><div></div></div>
+        ${filtered.map(j=>`
+          <div class="job-row jobs-row" data-job="${j.id}">
+            <div class="job-cell strong">${escapeHtml(j.customerName || "—")}</div>
+            <div class="job-cell">${escapeHtml(j.propertyAddress || "—")}</div>
+            <div class="job-cell">${formatDateNice(j.serviceDate)}</div>
+            <div class="job-cell strong">${formatMoney(j.total)}</div>
+            <div><span class="badge ${(j.status||'').toLowerCase()}">${j.status}</span></div>
+            <div><span class="badge ${j.paymentStatus==='Paid'?'paid':'unpaid'}">${j.paymentStatus}</span></div>
+            <div class="job-cell">${escapeHtml(j.invoiceNumber)}</div>
+            <div><button class="row-delete-btn" data-delete-job="${j.id}" title="Delete"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2m-9 0 1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/></svg></button></div>
+          </div>
+        `).join("")}
+      </div>
+    `}
+  `;
+  document.getElementById("jobs-new-quote").addEventListener("click", startNewQuote);
+  document.querySelectorAll(".filter-tab").forEach(el=>{
+    el.addEventListener("click", ()=>{ State.jobsFilter = el.dataset.filter; render(); });
+  });
+  document.querySelectorAll(".job-row[data-job]").forEach(el=>{
+    el.addEventListener("click", ()=> gotoJobDetail(el.dataset.job, "jobs"));
+  });
+  document.querySelectorAll("[data-delete-job]").forEach(btn=>{
+    btn.addEventListener("click", (e)=>{ e.stopPropagation(); deleteJob(btn.dataset.deleteJob); });
+  });
+}
+
+/* ---------------- INVOICES LIST ---------------- */
+function renderInvoicesList(){
+  const jobs = Store.getJobs().slice().sort((a,b)=> (b.createdAt||0) - (a.createdAt||0));
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">Invoices</h1>
+        <p class="page-desc">Every invoice generated, ready to view, download, or send.</p>
+      </div>
+      <button class="btn btn-primary btn-lg" id="invs-new-quote">+ New Quote</button>
+    </div>
+
+    ${jobs.length === 0 ? `
+      <div class="job-table"><div class="empty-state"><p>No invoices yet. Create a quote to generate your first one.</p></div></div>
+    ` : `
+      <div class="job-table">
+        <div class="job-row head"><div>Customer</div><div>Property</div><div>Service Date</div><div>Total</div><div>Status</div><div>Invoice #</div><div></div></div>
+        ${jobs.map(j=>`
+          <div class="job-row" data-job="${j.id}">
+            <div class="job-cell strong">${escapeHtml(j.customerName || "—")}</div>
+            <div class="job-cell">${escapeHtml(j.propertyAddress || "—")}</div>
+            <div class="job-cell">${formatDateNice(j.serviceDate)}</div>
+            <div class="job-cell strong">${formatMoney(j.total)}</div>
+            <div><span class="badge ${j.paymentStatus==='Paid'?'paid':'unpaid'}">${j.paymentStatus}</span></div>
+            <div class="job-cell">${escapeHtml(j.invoiceNumber)}</div>
+            <div><button class="row-delete-btn" data-delete-job="${j.id}" title="Delete"><svg viewBox="0 0 24 24" width="15" height="15" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M4 7h16M9 7V5a2 2 0 0 1 2-2h2a2 2 0 0 1 2 2v2m-9 0 1 13a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2l1-13"/></svg></button></div>
+          </div>
+        `).join("")}
+      </div>
+    `}
+  `;
+  document.getElementById("invs-new-quote").addEventListener("click", startNewQuote);
+  document.querySelectorAll(".job-row[data-job]").forEach(el=>{
+    el.addEventListener("click", ()=> gotoInvoice(el.dataset.job));
+  });
+  document.querySelectorAll("[data-delete-job]").forEach(btn=>{
+    btn.addEventListener("click", (e)=>{ e.stopPropagation(); deleteJob(btn.dataset.deleteJob); });
+  });
+}
+
+/* ---------------- JOB DETAIL ---------------- */
+function renderJobDetail(){
+  const job = State.activeJob;
+  if(!job){ navigate("jobs"); return; }
+  const returnLabels = { dashboard:"Dashboard", schedule:"Schedule", jobs:"Jobs", invoices:"Invoices", customerProfile:"Customer" };
+  const returnPage = State.jobDetailReturn || "jobs";
+  const amountOwed = Math.max(0, Math.round((job.total - (job.amountPaid||0)) * 100) / 100);
+
+  main.innerHTML = `
+    <div class="page-header">
+      <div>
+        <h1 class="page-title">${escapeHtml(job.customerName)}</h1>
+        <p class="page-desc">${escapeHtml(job.quote.description)} · Invoice ${escapeHtml(job.invoiceNumber)}</p>
+      </div>
+      <button class="btn btn-ghost" id="jd-back">← ${returnLabels[returnPage] || "Jobs"}</button>
+    </div>
+
+    <div class="status-badge-row">
+      <span class="badge ${(job.status||"").toLowerCase()}">${job.status}</span>
+      <span class="badge ${job.paymentStatus==='Paid' ? 'paid' : 'unpaid'}">${job.paymentStatus}</span>
+      ${job.recurringId ? `<span class="badge scheduled">Recurring</span>` : ""}
+    </div>
+
+    <div class="job-detail-layout">
+      <div class="detail-card">
+        <div class="profile-contact-row"><span class="k">Property Address</span><span class="v">${escapeHtml(job.propertyAddress)}</span></div>
+        <div class="profile-contact-row"><span class="k">Phone</span><span class="v">${escapeHtml(job.customerPhone || "N/A")}</span></div>
+        <div class="profile-contact-row"><span class="k">Email</span><span class="v">${escapeHtml(job.customerEmail || "N/A")}</span></div>
+
+        <div class="form-grid" style="margin-top:18px;">
+          <div class="field"><label>Service Date</label><input type="date" id="jd-date" value="${job.serviceDate||""}"></div>
+          <div class="field"><label>Time</label><input type="time" id="jd-time" value="${job.scheduledTime||"10:00"}"></div>
+          <div class="field"><label>Subtotal ($)</label><input type="number" id="jd-subtotal" value="${job.subtotal}" step="0.01"></div>
+          <div class="field"><label>Discount ($)</label><input type="number" id="jd-discount" value="${job.discount||0}" step="0.01"></div>
+        </div>
+        <div class="field" style="margin-top:14px;">
+          <label>Notes</label>
+          <textarea class="notes-box" id="jd-notes" placeholder="Gate is on the side of the house, dog stays inside…">${escapeHtml(job.notes||"")}</textarea>
+        </div>
+        <button class="btn btn-primary" id="jd-save" style="width:100%;justify-content:center;margin-top:14px;">Save Changes</button>
+
+        <div class="detail-row" style="margin-top:20px;"><span class="detail-key">Subtotal</span><span class="detail-val">${formatMoney(job.subtotal)}</span></div>
+        <div class="detail-row"><span class="detail-key">Discount</span><span class="detail-val">-${formatMoney(job.discount||0)}</span></div>
+        <div class="detail-row"><span class="detail-key">Tax</span><span class="detail-val">${formatMoney(job.tax||0)}</span></div>
+        <div class="detail-row"><span class="detail-key">Total</span><span class="detail-val">${formatMoney(job.total)}</span></div>
+        <div class="detail-row"><span class="detail-key">Amount Paid</span><span class="detail-val">${formatMoney(job.amountPaid||0)}</span></div>
+        <div class="detail-row"><span class="detail-key">Amount Owed</span><span class="detail-val" style="color:${amountOwed>0?'var(--amber)':'var(--green-300)'}">${formatMoney(amountOwed)}</span></div>
+      </div>
+
+      <div class="job-detail-actions">
+        <button class="btn" id="jd-view-invoice">View Invoice</button>
+        <button class="btn" id="jd-toggle-completed">${job.status==='Completed' ? "Revert to Scheduled" : "Mark Completed"}</button>
+
+        ${job.paymentStatus === "Paid" ? `
+          <button class="btn" id="jd-mark-unpaid">Mark Unpaid</button>
+        ` : `
+          <button class="btn btn-primary" id="jd-record-payment-toggle">Record Payment</button>
+          <div class="payment-form" id="jd-payment-form">
+            <div class="field"><label>Amount Paid ($)</label><input type="number" id="pf-amount" value="${amountOwed}" step="0.01"></div>
+            <div class="field"><label>Payment Method</label><select id="pf-method">${Store.getConfig().paymentMethods.map(m=>`<option value="${escapeHtml(m)}" ${m===job.paymentMethod?"selected":""}>${escapeHtml(m)}</option>`).join("")}</select></div>
+            <div class="field"><label>Payment Date</label><input type="date" id="pf-date" value="${todayISO()}"></div>
+            <button class="btn btn-primary" id="pf-confirm">Confirm Payment</button>
+          </div>
+        `}
+
+        <button class="btn" id="jd-rebook-toggle">Rebook</button>
+        <div class="payment-form" id="jd-rebook-form">
+          <div class="filter-tabs">
+            <button type="button" class="filter-tab" data-weeks="1">+1 wk</button>
+            <button type="button" class="filter-tab" data-weeks="2">+2 wk</button>
+            <button type="button" class="filter-tab" data-weeks="3">+3 wk</button>
+            <button type="button" class="filter-tab" data-weeks="4">+4 wk</button>
+          </div>
+          <div class="field"><label>Date</label><input type="date" id="rb-date" value="${addDaysISO(job.serviceDate || todayISO(), 7)}"></div>
+          <div class="field"><label>Time</label><input type="time" id="rb-time" value="${job.scheduledTime||"10:00"}"></div>
+          <button class="btn btn-primary" id="rb-confirm">Create Rebooked Job</button>
+        </div>
+
+        <button class="btn" id="jd-toggle-cancelled" style="color:var(--red)">${job.status==='Cancelled' ? "Reactivate Job" : "Cancel Job"}</button>
+        <button class="btn" id="jd-delete" style="color:var(--red)">Delete Job</button>
+      </div>
+    </div>
+  `;
+
+  document.getElementById("jd-back").addEventListener("click", ()=> navigate(returnPage));
+  document.getElementById("jd-view-invoice").addEventListener("click", ()=> gotoInvoice(job.id));
+  document.getElementById("jd-save").addEventListener("click", ()=> saveJobEdits(job.id));
+  document.getElementById("jd-toggle-completed").addEventListener("click", ()=> toggleJobCompleted(job.id));
+  document.getElementById("jd-toggle-cancelled").addEventListener("click", ()=> toggleJobCancelled(job.id));
+  document.getElementById("jd-delete").addEventListener("click", ()=> deleteJob(job.id));
+  document.getElementById("jd-mark-unpaid")?.addEventListener("click", ()=> setJobStatus(job.id, "Unpaid"));
+  document.getElementById("jd-record-payment-toggle")?.addEventListener("click", ()=>{
+    document.getElementById("jd-payment-form").classList.toggle("open");
+  });
+  document.getElementById("pf-confirm")?.addEventListener("click", ()=>{
+    const amount = parseFloat(document.getElementById("pf-amount").value) || 0;
+    const method = document.getElementById("pf-method").value;
+    const date = document.getElementById("pf-date").value || todayISO();
+    recordPayment(job.id, amount, method, date);
+  });
+  document.getElementById("jd-rebook-toggle").addEventListener("click", ()=>{
+    document.getElementById("jd-rebook-form").classList.toggle("open");
+  });
+  document.querySelectorAll("[data-weeks]").forEach(btn=>{
+    btn.addEventListener("click", ()=>{
+      const n = parseInt(btn.dataset.weeks, 10);
+      document.getElementById("rb-date").value = addDaysISO(job.serviceDate || todayISO(), n*7);
+    });
+  });
+  document.getElementById("rb-confirm").addEventListener("click", ()=>{
+    const date = document.getElementById("rb-date").value;
+    const time = document.getElementById("rb-time").value || "10:00";
+    if(!date){ showToast("Pick a date to rebook."); return; }
+    rebookJob(job, date, time);
+  });
+}
+
+function saveJobEdits(jobId){
+  const job = Store.getJobs().find(j=>j.id === jobId);
+  if(!job) return;
+  const serviceDate = document.getElementById("jd-date").value;
+  const scheduledTime = document.getElementById("jd-time").value || "10:00";
+  const subtotal = parseFloat(document.getElementById("jd-subtotal").value) || 0;
+  const discount = parseFloat(document.getElementById("jd-discount").value) || 0;
+  const notes = document.getElementById("jd-notes").value;
+  const taxPct = job.taxPct || 0;
+  const tax = Math.round((subtotal - discount) * (taxPct/100) * 100) / 100;
+  const total = Math.round((subtotal - discount + tax) * 100) / 100;
+  setJobField(jobId, { serviceDate, scheduledTime, subtotal, discount, tax, total, notes });
+  render();
+  showToast("Job updated.");
+}
+function toggleJobCompleted(jobId){
+  const job = Store.getJobs().find(j=>j.id === jobId);
+  if(!job) return;
+  const newStatus = job.status === "Completed" ? "Scheduled" : "Completed";
+  setJobField(jobId, { status:newStatus });
+  render();
+  showToast(newStatus === "Completed" ? "Marked completed." : "Reverted to scheduled.");
+}
+function toggleJobCancelled(jobId){
+  const job = Store.getJobs().find(j=>j.id === jobId);
+  if(!job) return;
+  if(job.status === "Cancelled"){
+    setJobField(jobId, { status:"Scheduled" });
+    showToast("Job reactivated.");
+  }else{
+    if(!confirm("Cancel this job?")) return;
+    setJobField(jobId, { status:"Cancelled" });
+    showToast("Job cancelled.");
+  }
+  render();
+}
+function recordPayment(jobId, amount, method, date){
+  const job = Store.getJobs().find(j=>j.id === jobId);
+  if(!job) return;
+  const newAmountPaid = Math.round(amount * 100) / 100;
+  const patch = {
+    amountPaid: newAmountPaid,
+    paymentMethod: method,
+    paymentDate: date,
+    paymentStatus: newAmountPaid >= job.total ? "Paid" : "Unpaid"
+  };
+  if(patch.paymentStatus === "Paid" && job.status === "Scheduled") patch.status = "Completed";
+  setJobField(jobId, patch);
+  render();
+  showToast(patch.paymentStatus === "Paid" ? "Payment recorded — marked Paid." : "Partial payment recorded.");
+}
+function rebookJob(originalJob, newDate, newTime){
+  const newJob = {
+    ...JSON.parse(JSON.stringify(originalJob)),
+    id: uid("job"),
+    invoiceNumber: nextInvoiceNumber(),
+    serviceDate: newDate,
+    scheduledTime: newTime,
+    invoiceDate: todayISO(),
+    dueDate: newDate,
+    paymentStatus: "Unpaid",
+    amountPaid: 0,
+    paymentDate: null,
+    status: "Scheduled",
+    recurringId: null,
+    createdAt: Date.now()
+  };
+  const jobs = Store.getJobs();
+  jobs.push(newJob);
+  Store.setJobs(jobs);
+  showToast("Rebooked for " + formatDateNice(newDate));
+  gotoJobDetail(newJob.id, State.jobDetailReturn);
+}
+
 function renderSettings(){
   const config = Store.getConfig();
 
